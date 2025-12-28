@@ -21,7 +21,6 @@ template <typename T> class Array
                     data[i] = other.data[i];
                 }
             }
-            
         }
         Array &operator = (const Array &other)
         {
@@ -29,10 +28,10 @@ template <typename T> class Array
             {
                 delete[] data;
                 n = other.n;
-                if(n > 0)
-                    data = new T[other.n];
-                else
-                    data = NULL;
+                // if(n > 0)
+                //     data = new T[other.n];
+                // else
+                //     data = NULL;
                 for (size_t i = 0; i < n; i++)
                 {
                     data[i] = other.data[i];
@@ -44,20 +43,18 @@ template <typename T> class Array
         T &operator[](size_t index)
         {
             if (index >= n)
-                throw std::exception();
+                throw std::range_error("not valid index");
             return data[index];
         }
 
         T operator[](size_t index) const
         {
             if (index >= n)
-                throw std::exception();
+                throw std::range_error("not valid index");
             return data[index];
         }
 
         size_t size() const {return n;}
-
-
-
+        
         ~Array(){delete[] data;};
 };

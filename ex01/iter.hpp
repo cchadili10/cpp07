@@ -1,4 +1,5 @@
 #pragma once
+
 #include <cstddef>
 #include <iostream>
 
@@ -13,8 +14,8 @@ void increment(T &value)
     value++;
 }
 
-template <typename Ta, typename Tc>
-void iter(Ta *ad, const size_t len, Tc fun)
+template <typename Ta, typename Tf>
+void iter(Ta *ad, const size_t len, Tf fun)
 {
     for (size_t i = 0; i < len; i++)
     {

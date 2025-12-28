@@ -35,7 +35,7 @@ int main()
    }
    catch(const std::exception& e)
    {
-    std::cerr <<"error not valid index"<< '\n';
+    std::cerr << "Error : " << e.what()<< '\n';
    }
    
     return 0;
