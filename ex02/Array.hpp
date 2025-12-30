@@ -28,10 +28,10 @@ template <typename T> class Array
             {
                 delete[] data;
                 n = other.n;
-                // if(n > 0)
-                //     data = new T[other.n];
-                // else
-                //     data = NULL;
+                if (n > 0)
+                    data = new T[other.n];
+                else
+                    data = NULL;
                 for (size_t i = 0; i < n; i++)
                 {
                     data[i] = other.data[i];

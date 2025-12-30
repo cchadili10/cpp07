@@ -3,7 +3,7 @@
 #include <cstddef>
 #include <iostream>
 
-template <typename T> void print(const T value)
+template <typename T> void print(const T &value)
 {
     std::cout << value << std::endl;
 }
@@ -17,6 +17,8 @@ void increment(T &value)
 template <typename Ta, typename Tf>
 void iter(Ta *ad, const size_t len, Tf fun)
 {
+    if(!ad || !fun)
+        return ;
     for (size_t i = 0; i < len; i++)
     {
         fun(ad[i]);
